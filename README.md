@@ -157,7 +157,12 @@ Awesome-ID-Customization
   
   ![image](pic/umo.png)
 
-
+* **Learning Joint ID-Textual Representation for ID-Preserving Image Synthesis**
+  
+  * 地址：[https://github.com/bytedance/FaceCLIP]![](https://img.shields.io/github/stars/bytedance/FaceCLIP.svg)
+  * 架构图：
+  
+  ![image](pic/faceclip.jpeg)
   
 
 #### 1.2 Unet模型
