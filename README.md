@@ -47,7 +47,7 @@ Awesome-ID-Customization
 
 * **EditIDv2: Editable ID Customization with Data-Lubricated ID Feature Integration for Text-to-Image Generation**
   
-  * 地址：https://github.com/typemovie/EditIDv2 ![](https://img.shields.io/github/starstypemovie/EditIDv2.svg)
+  * 地址：https://github.com/typemovie/EditIDv2 ![](https://img.shields.io/github/stars/typemovie/EditIDv2.svg)
   * 架构图：
   
   ![image](pic/editidv2.png)
