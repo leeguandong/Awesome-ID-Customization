@@ -163,6 +163,48 @@ Awesome-ID-Customization
   * 架构图：
   
   ![image](pic/faceclip.jpeg)
+
+* **USO: Unified Style and Subject-Driven Generation via Disentangled and Reward Learning**
+
+  * 地址：https://github.com/bytedance/USO ![](https://img.shields.io/github/stars/bytedance/USO.svg)
+  * 架构图：
+
+  ![image](pic/uso.png)
+
+* **IC-Custom: Diverse Image Customization via In-Context Learning**
+
+  * 地址：https://github.com/TencentARC/IC-Custom ![](https://img.shields.io/github/stars/TencentARC/IC-Custom.svg)
+  * 架构图：
+
+  ![image](pic/ic-custom.png)
+
+* **WithAnyone: Towards Controllable and ID Consistent Image Generation**
+
+  * 地址：https://github.com/Doby-Xu/WithAnyone ![](https://img.shields.io/github/stars/Doby-Xu/WithAnyone.svg)
+  * 架构图：
+
+  ![image](pic/withanyone.png)
+
+* **MagicMirror: ID-Preserved Video Generation in Video Diffusion Transformers**
+
+  * 地址：https://github.com/dvlab-research/MagicMirror ![](https://img.shields.io/github/stars/dvlab-research/MagicMirror.svg)
+  * 架构图：
+
+  ![image](pic/magicmirror.png)
+
+* **ExpPortrait: Expressive Portrait Generation via Personalized Representation**
+
+  * 地址：https://arxiv.org/abs/2602.19900
+  * 架构图：
+
+  ![image](pic/expportrait.png)
+
+* **AnyPhoto: Multi-Person Identity Preserving Image Generation with ID Adaptive Modulation on Location Canvas**
+
+  * 地址：https://arxiv.org/abs/2603.14770
+  * 架构图：
+
+  ![image](pic/anyphoto.png)
   
 
 #### 1.2 Unet模型
@@ -292,6 +334,20 @@ Awesome-ID-Customization
   * 架构图：
   
   ![image](pic/id_booth.png)
+
+* **FaceSnap: Enhanced ID-fidelity Network for Tuning-free Portrait Customization**
+
+  * 地址：https://arxiv.org/abs/2602.00627
+  * 架构图：
+
+  ![image](pic/facesnap.png)
+
+* **Diff-PC: Identity-preserving and 3D-aware Controllable Diffusion for Zero-shot Portrait Customization**
+
+  * 地址：https://arxiv.org/abs/2602.00639
+  * 架构图：
+
+  ![image](pic/diff-pc.png)
 
 ###  2. <a name='评测'></a>测评
 
