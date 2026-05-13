@@ -205,27 +205,6 @@ Awesome-ID-Customization
   * 架构图：
 
   ![image](pic/anyphoto.png)
-
-* **Inject Where It Matters: Training-Free Spatially-Adaptive Identity Preservation for Text-to-Image Personalization (SpatialID)**
-
-  * 地址：https://github.com/leeguandong/SpatialID ![](https://img.shields.io/github/stars/leeguandong/SpatialID.svg)
-  * 架构图：
-
-  ![image](pic/spatialid.png)
-
-* **FlexID: Training-Free Flexible Identity Injection via Intent-Aware Modulation for Text-to-Image Generation**
-
-  * 地址：https://github.com/leeguandong/FlexID ![](https://img.shields.io/github/stars/leeguandong/FlexID.svg)
-  * 架构图：
-
-  ![image](pic/flexid.png)
-
-* **DVI: Disentangling Semantic and Visual Identity for Training-Free Personalized Generation**
-
-  * 地址：https://github.com/leeguandong/DVI ![](https://img.shields.io/github/stars/leeguandong/DVI.svg)
-  * 架构图：
-
-  ![image](pic/dvi.png)
   
 
 #### 1.2 Unet模型
