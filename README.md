@@ -187,7 +187,7 @@ Awesome-ID-Customization
 
 * **MagicMirror: ID-Preserved Video Generation in Video Diffusion Transformers**
 
-  * 地址：https://github.com/dvlab-research/MagicMirror ![](https://img.shields.io/github/stars/dvlab-research/MagicMirror.svg)
+  * 地址：https://github.com/JIA-Lab-research/MagicMirror ![](https://img.shields.io/github/stars/JIA-Lab-research/MagicMirror.svg)
   * 架构图：
 
   ![image](pic/magicmirror.png)
@@ -197,7 +197,7 @@ Awesome-ID-Customization
   * 地址：https://arxiv.org/abs/2602.19900
   * 架构图：
 
-  ![image](pic/expportrait.png)
+  ![image](pic/expportrait.jpg)
 
 * **AnyPhoto: Multi-Person Identity Preserving Image Generation with ID Adaptive Modulation on Location Canvas**
 
@@ -340,14 +340,14 @@ Awesome-ID-Customization
   * 地址：https://arxiv.org/abs/2602.00627
   * 架构图：
 
-  ![image](pic/facesnap.png)
+  ![image](pic/facesnap.jpg)
 
 * **Diff-PC: Identity-preserving and 3D-aware Controllable Diffusion for Zero-shot Portrait Customization**
 
   * 地址：https://arxiv.org/abs/2602.00639
   * 架构图：
 
-  ![image](pic/diff-pc.png)
+  ![image](pic/diff-pc.jpg)
 
 ###  2. <a name='评测'></a>测评
 
