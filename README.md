@@ -226,13 +226,6 @@ Awesome-ID-Customization
   * 架构图：
 
   ![image](pic/dvi.png)
-
-* **ChatAce: Image Editing via Flux ACE++ with Identity-Consistent Editing**
-
-  * 地址：https://github.com/leeguandong/ChatAce ![](https://img.shields.io/github/stars/leeguandong/ChatAce.svg)
-  * 架构图：
-
-  ![image](pic/chatace.png)
   
 
 #### 1.2 Unet模型
