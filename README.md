@@ -205,6 +205,27 @@ Awesome-ID-Customization
   * 架构图：
 
   ![image](pic/anyphoto.png)
+
+* **PositionIC: Unified Position and Identity Consistency for Image Customization**
+
+  * 地址：https://github.com/MeiGen-AI/PositionIC ![](https://img.shields.io/github/stars/MeiGen-AI/PositionIC.svg)
+  * 架构图：
+
+  ![image](pic/positionic.png)
+
+* **MultiCrafter: High-Fidelity Multi-Subject Generation via Disentangled Attention and Identity-Aware Preference Alignment**
+
+  * 地址：https://arxiv.org/abs/2509.21953
+  * 架构图：
+
+  ![image](pic/multicrafter.png)
+
+* **Flux Already Knows: Activating Subject-Driven Image Generation without Training**
+
+  * 地址：https://github.com/bytedance/LatentUnfold ![](https://img.shields.io/github/stars/bytedance/LatentUnfold.svg)
+  * 架构图：
+
+  ![image](pic/latentunfold.png)
   
 
 #### 1.2 Unet模型
@@ -348,6 +369,13 @@ Awesome-ID-Customization
   * 架构图：
 
   ![image](pic/diff-pc.jpg)
+
+* **Training for Identity, Inference for Controllability: A Unified Approach to Tuning-Free Face Personalization**
+
+  * 地址：https://github.com/lyuPang/UniID ![](https://img.shields.io/github/stars/lyuPang/UniID.svg)
+  * 架构图：
+
+  ![image](pic/uniid.jpg)
 
 ###  2. <a name='评测'></a>测评
 
