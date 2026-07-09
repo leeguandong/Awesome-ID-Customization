@@ -27,10 +27,10 @@ Awesome-ID-Customization
   
   - [1. 人物自定义模型](#1-人物自定义模型)
     
-    - [1.1 基于DiT架构](#11-Flux模型)
-    - [1.2 基于unet架构](#12-Unet模型)
-    
-    
+    - [1.1 基于DiT架构](#11-flux模型)
+    - [1.2 基于unet架构](#12-unet模型)
+  - [2. 测评](#2-测评)
+  - [3. 数据集](#3-数据集)
   
 - [Star History](#star-history)
 
@@ -40,7 +40,7 @@ Awesome-ID-Customization
 
 * **EditID: Training-Free Editable ID Customization for Text-to-Image Generation**
   
-  * 地址：https://github.com/leeguandong/IBench ![](https://img.shields.io/github/stars/typemovie/IBench.svg)  
+  * 地址：https://github.com/leeguandong/IBench ![](https://img.shields.io/github/stars/leeguandong/IBench.svg)
   * 架构图：
   
    ![image](pic/editid.png)
@@ -87,7 +87,7 @@ Awesome-ID-Customization
   
   ![image](pic/uno.png)
 
-* **ACE++: Instruction-Based Image Creation and Editing via Context-Aware Content Fillingn**
+* **ACE++: Instruction-Based Image Creation and Editing via Context-Aware Content Filling**
   
   * 地址：https://github.com/ali-vilab/ACE_plus ![](https://img.shields.io/github/stars/ali-vilab/ACE_plus.svg)
   * 架构图：
@@ -159,7 +159,7 @@ Awesome-ID-Customization
 
 * **Learning Joint ID-Textual Representation for ID-Preserving Image Synthesis**
   
-  * 地址：[https://github.com/bytedance/FaceCLIP]![](https://img.shields.io/github/stars/bytedance/FaceCLIP.svg)
+  * 地址：https://github.com/bytedance/FaceCLIP ![](https://img.shields.io/github/stars/bytedance/FaceCLIP.svg)
   * 架构图：
   
   ![image](pic/faceclip.jpeg)
@@ -226,7 +226,35 @@ Awesome-ID-Customization
   * 架构图：
 
   ![image](pic/latentunfold.png)
-  
+
+* **Scone: Bridging Composition and Distinction in Subject-Driven Image Generation via Unified Understanding-Generation Modeling**
+
+  * 地址：https://github.com/Ryann-Ran/Scone ![](https://img.shields.io/github/stars/Ryann-Ran/Scone.svg)
+  * 架构图：
+
+  ![image](pic/scone.png)
+
+* **MagicView: Multi-View Consistent Identity Customization via Priors-Guided In-Context Learning**
+
+  * 地址：https://arxiv.org/abs/2511.00293
+  * 架构图：
+
+  ![image](pic/magicview.png)
+
+* **Proteus-ID: ID-Consistent and Motion-Coherent Video Customization**
+
+  * 地址：https://github.com/grenoble-zhang/Proteus-ID ![](https://img.shields.io/github/stars/grenoble-zhang/Proteus-ID.svg)
+  * 架构图：
+
+  ![image](pic/proteus-id.jpg)
+
+* **DivRL: Disentangled Self-Similarity Rewards for Diverse Subject-Driven Generation**
+
+  * 地址：https://github.com/QianWangX/DivRL ![](https://img.shields.io/github/stars/QianWangX/DivRL.svg)
+  * 架构图：
+
+  ![image](pic/divrl.png)
+
 
 #### 1.2 Unet模型
 
@@ -381,9 +409,27 @@ Awesome-ID-Customization
 
 
 
+* **SconeEval: Benchmark for Subject-Driven Composition and Distinction**
+
+  * 地址：https://huggingface.co/datasets/Ryann829/SconeEval
+  * 简介：面向 subject-driven image generation 的组合与区分能力测评集，覆盖复杂参考图、多主体组合和目标主体辨别。
+
+* **DSH-Bench: A Difficulty- and Scenario-Aware Benchmark with Hierarchical Subject Taxonomy for Subject-Driven Text-to-Image Generation**
+
+  * 地址：https://arxiv.org/abs/2603.08090
+  * 简介：面向 subject-driven T2I 的分难度、分场景层级测评体系，包含 Subject Identity Consistency Score 等评估指标。
+
 ###  3. <a name='数据集'></a>数据集
 
+* **OpenSubject: Leveraging Video-Derived Identity and Diversity Priors for Subject-driven Image Generation and Manipulation**
 
+  * 地址：https://arxiv.org/abs/2512.08294
+  * 简介：从视频中构造的 subject-driven generation / manipulation 数据集与 benchmark，包含跨帧身份先验和复杂场景样本。
+
+* **Proteus-Bench: Benchmark for Video Identity Customization**
+
+  * 地址：https://grenoble-zhang.github.io/Proteus-ID/
+  * 简介：Proteus-ID 提出的身份一致视频定制训练与测评数据，覆盖身份保持、文本对齐和运动质量评估。
 
 ## Star History
 
