@@ -27,8 +27,9 @@ Awesome-ID-Customization
   
   - [1. 人物自定义模型](#1-人物自定义模型)
     
-    - [1.1 基于DiT架构](#11-flux模型)
-    - [1.2 基于unet架构](#12-unet模型)
+    - [1.1 方法全景表](#11-方法全景表)
+    - [1.2 基于DiT架构](#12-flux模型)
+    - [1.3 基于unet架构](#13-unet模型)
   - [2. 测评](#2-测评)
   - [3. 数据集](#3-数据集)
   
@@ -36,7 +37,66 @@ Awesome-ID-Customization
 
 ###  1. <a name='模型'></a>人物自定义模型
 
-#### 1.1 Flux模型
+#### 1.1 方法全景表
+
+| 方法 | 年份 | 基座/架构 | 任务范式 | ID/主体能力 | 链接 |
+|------|------|-----------|----------|-------------|------|
+| **EditID** | 2025 | Flux / DiT | Training-free editable ID customization | 单人 ID，可编辑性 | [GitHub](https://github.com/leeguandong/IBench) |
+| **EditIDv2** | 2025 | Flux / DiT | Data-lubricated ID feature integration | 单人 ID，长文本编辑 | [GitHub](https://github.com/typemovie/EditIDv2) |
+| **PuLID** | 2024 | SD / Flux | Contrastive ID alignment | 单人 ID，轻量快速 | [GitHub](https://github.com/ToTheBeginning/PuLID) |
+| **FLUX-customID** | 2024 | Flux | ID adapter / customization | 单人 ID，真实感定制 | [GitHub](https://github.com/damo-cv/FLUX-customID) |
+| **ConsisID** | 2024 | Video DiT | Frequency decomposition for T2V | 单人 ID 视频 | [GitHub](https://github.com/PKU-YuanGroup/ConsisID) |
+| **InfiniteYou** | 2025 | Flux / DiT | Flexible photo recrafting | 单人 ID，照片重绘 | [GitHub](https://github.com/bytedance/InfiniteYou) |
+| **UNO** | 2025 | DiT | In-context subject generation | 单/多主体，少样本上下文 | [GitHub](https://github.com/bytedance/UNO) |
+| **ACE++** | 2025 | DiT | Instruction image creation/editing | 上下文填充，主体/风格编辑 | [GitHub](https://github.com/ali-vilab/ACE_plus) |
+| **Personalize Anything** | 2025 | DiT | Free personalization | 通用主体定制 | [GitHub](https://github.com/fenghora/personalize-anything) |
+| **Diptych** | 2025 | Flux / Inpainting | Zero-shot subject-driven generation | 任意主体，inpainting 条件 | [GitHub](https://github.com/wuyou22s/Diptych) |
+| **DynamicID** | 2025 | DiT | Zero-shot multi-ID personalization | 多 ID，脸部可编辑 | [arXiv](https://arxiv.org/abs/2503.06505) |
+| **InstantCharacter** | 2025 | DiT | Scalable character personalization | 角色一致性 | [GitHub](https://github.com/Tencent/InstantCharacter) |
+| **RealCustom++** | 2025 | DiT | Real-word representation | 实时主体定制 | [GitHub](https://github.com/bytedance/RealCustom) |
+| **DreamO** | 2025 | DiT | Unified image customization | 通用图像定制 | [GitHub](https://github.com/bytedance/DreamO) |
+| **FlexIP** | 2025 | DiT | Preservation / personality control | 保真度与个性化可控 | [arXiv](https://arxiv.org/abs/2504.07405) |
+| **XVerse** | 2025 | DiT | DiT modulation | 多主体 ID + 语义属性控制 | [GitHub](https://github.com/bytedance/XVerse) |
+| **UMO** | 2025 | DiT / RL | Matching reward optimization | 多 ID 一致性与防混淆 | [GitHub](https://github.com/bytedance/UMO) |
+| **FaceCLIP** | 2025 | DiT | Joint ID-textual representation | ID-文本联合表征 | [GitHub](https://github.com/bytedance/FaceCLIP) |
+| **USO** | 2025 | DiT | Style / subject disentanglement | 风格 + 主体统一生成 | [GitHub](https://github.com/bytedance/USO) |
+| **IC-Custom** | 2025 | DiT | In-context image customization | 上下文主体定制 | [GitHub](https://github.com/TencentARC/IC-Custom) |
+| **WithAnyone** | 2025 | DiT | Controllable ID-consistent generation | 人物 ID 可控生成 | [GitHub](https://github.com/Doby-Xu/WithAnyone) |
+| **MagicMirror** | 2025 | Video DiT | ID-preserved video generation | 单人 ID 视频 | [GitHub](https://github.com/JIA-Lab-research/MagicMirror) |
+| **ExpPortrait** | 2026 | DiT | Expressive portrait generation | 表情化肖像定制 | [arXiv](https://arxiv.org/abs/2602.19900) |
+| **AnyPhoto** | 2026 | DiT | Location-canvas ID modulation | 多人 ID，位置绑定 | [arXiv](https://arxiv.org/abs/2603.14770) |
+| **PositionIC** | 2025 | DiT | Position + identity consistency | 位置控制 + ID 一致 | [GitHub](https://github.com/MeiGen-AI/PositionIC) |
+| **MultiCrafter** | 2025 | DiT | Disentangled attention + preference alignment | 多主体高保真生成 | [arXiv](https://arxiv.org/abs/2509.21953) |
+| **LatentUnfold** | 2025 | Flux / DiT | Training-free subject activation | 无训练主体驱动生成 | [GitHub](https://github.com/bytedance/LatentUnfold) |
+| **Scone** | 2026 | Unified model | Composition + distinction modeling | 多主体组合与目标主体区分 | [GitHub](https://github.com/Ryann-Ran/Scone) |
+| **MagicView** | 2025 | DiT | Priors-guided in-context learning | 单图到多视角 ID 一致 | [arXiv](https://arxiv.org/abs/2511.00293) |
+| **Proteus-ID** | 2025 | Video DiT | ID-consistent video customization | 单人 ID，运动一致视频 | [GitHub](https://github.com/grenoble-zhang/Proteus-ID) |
+| **DivRL** | 2026 | Post-training / RL | Identity-diversity reward optimization | 主体一致性 + 多样性 | [GitHub](https://github.com/QianWangX/DivRL) |
+| **PortraitBooth** | 2023 | UNet | Fast portrait personalization | 单人肖像定制 | [Project](https://portraitbooth.github.io/) |
+| **DreamIdentity** | 2023 | UNet | Face-identity preserved generation | 单人 ID，编辑性增强 | [arXiv](https://arxiv.org/abs/2307.00300) |
+| **ConsistentID** | 2024 | UNet | Multimodal fine-grained ID preserving | 单人肖像生成 | [GitHub](https://github.com/JackAILab/ConsistentID) |
+| **PhotoMaker** | 2024 | UNet / SDXL | Stacked ID embedding | 单人/多人照片定制 | [GitHub](https://github.com/TencentARC/PhotoMaker) |
+| **IDAdapter** | 2024 | UNet | Mixed feature adapter | Tuning-free 个性化 | [arXiv](https://arxiv.org/abs/2403.13535) |
+| **InstantID** | 2024 | UNet / SDXL | Plug-and-play IdentityNet | 单图零样本 ID 保持 | [GitHub](https://github.com/instantX-research/InstantID) |
+| **Character-Adapter** | 2024 | UNet | Region-controlled character adapter | 角色区域控制 | [GitHub](https://github.com/Character-Adapter/Character-Adapter) |
+| **Face Adapter** | 2024 | UNet | Fine-grained ID / attribute adapter | ID + 属性控制 | [GitHub](https://github.com/FaceAdapter/Face-Adapter) |
+| **FastComposer** | 2023 | UNet | Localized attention | 多主体免训练生成 | [GitHub](https://github.com/open-mmlab/mmagic/tree/main/configs/fastcomposer) |
+| **IC-Portrait** | 2025 | UNet | In-context portrait matching | 视角一致肖像生成 | [arXiv](https://arxiv.org/abs/2501.17159) |
+| **MasterWeaver** | 2024 | UNet | Editability / identity balancing | 人物个性化编辑 | [GitHub](https://github.com/csyxwei/MasterWeaver) |
+| **PhotoVerse** | 2023 | UNet | Tuning-free image customization | 图像主体定制 | [GitHub](https://github.com/idonahum/photoVerse) |
+| **UniPortrait** | 2024 | UNet | Unified single / multi-human personalization | 单人/多人 ID | [GitHub](https://github.com/junjiehe96/UniPortrait) |
+| **RealisID** | 2024 | UNet | Local-global complementation | 小脸/位置/姿态可控 | [arXiv](https://arxiv.org/abs/2412.16832) |
+| **FlashFace** | 2024 | UNet | High-fidelity human personalization | 高保真人脸定制 | [GitHub](https://github.com/ali-vilab/FlashFace) |
+| **CrossFaceID** | 2024 | UNet | Cross-training data | FaceID customization | [GitHub](https://github.com/ShuheSH/CrossFaceID) |
+| **DreamID** | 2024 | UNet | Triplet ID group learning | 快速高保真人脸交换 | [GitHub](https://github.com/superhero-7/DreamID) |
+| **ID-Booth** | 2023 | UNet | Identity-consistent face generation | 单人脸生成 | [GitHub](https://github.com/dariant/ID-Booth) |
+| **FaceSnap** | 2026 | UNet | ID-fidelity network | Tuning-free portrait customization | [arXiv](https://arxiv.org/abs/2602.00627) |
+| **Diff-PC** | 2026 | UNet | 3D-aware controllable diffusion | 零样本肖像定制 | [arXiv](https://arxiv.org/abs/2602.00639) |
+| **UniID** | 2025 | UNet | Training for identity, inference for control | 免调参人脸个性化 | [GitHub](https://github.com/lyuPang/UniID) |
+
+> 备注：年份按论文或项目公开时间粗略标注，详细信息以下方条目与原论文/仓库为准。
+
+#### 1.2 Flux模型
 
 * **EditID: Training-Free Editable ID Customization for Text-to-Image Generation**
   
@@ -256,7 +316,7 @@ Awesome-ID-Customization
   ![image](pic/divrl.png)
 
 
-#### 1.2 Unet模型
+#### 1.3 Unet模型
 
 * **PortraitBooth: A Versatile Portrait Model for Fast Identity-preserved Personalization**
   
