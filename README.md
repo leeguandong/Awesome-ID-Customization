@@ -27,12 +27,6 @@ Awesome-ID-Customization
 - **单独整理**：直接服务于主体一致性生成的测评指标、benchmark 和训练数据集。
 - **暂不收录**：仅做检索/识别、隐私攻击与防护、换装/妆发迁移、图像修复、换脸、纯 3D Avatar 或 Talking Head，且没有通用自定义生成贡献的工作。
 
-## 最近更新
-
-- **2026-07-19（精细检索）**：按人物 ID、通用主体、多主体/布局、图像/视频、训练式/免训练、测评与数据集等方向交叉检索，方法全景表扩展至 **71 项**。
-- 本轮新增 Identity Tuning、DeGu、Sparse Context、SwiftPie、ASTRA、DisCo、MS-CustomNet、IdGlow、FlowFixer、DreamVAR、MOSAIC、ContextGen、LayerComposer、AnyMS，以及 3 项测评和 4 个数据集。
-- 同步更新项目范围、架构分类和论文原始架构图；年份以论文或项目首次公开时间为准。
-
 
 ## 目录
 - [收录范围](#收录范围)
