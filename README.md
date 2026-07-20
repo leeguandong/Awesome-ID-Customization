@@ -15,21 +15,36 @@ Awesome-ID-Customization
 
 
 
-本项目旨在收集和梳理人物自定义相关的开源模型、应用、数据集及教程等资料，人物自定义主要指的是人物一致性生成，一致性与可编辑性之间的均衡优化，当前基于flux版本的人物一致性方法很少！
+本项目持续收集和梳理人物/主体自定义（ID Customization、Subject-Driven Generation）相关的开源模型、论文、测评与数据集。重点关注参考身份或主体的一致性保持，以及一致性、提示词遵循、可编辑性和生成多样性之间的平衡。目前 DiT、Flow Transformer 与统一多模态生成模型已成为主要技术路线，本项目同时保留经典 UNet 方法，并覆盖图像与视频自定义。
 
 如果本项目能给您带来一点点帮助，麻烦点个⭐️吧～
 
-同时也欢迎大家贡献本项目未收录的开源模型、应用、数据集等。提供新的仓库信息请发起PR，并按照本项目的格式提供仓库链接、star数，简介等相关信息，感谢~
+同时也欢迎大家贡献本项目未收录的开源模型、应用、数据集等。提供新的仓库信息请发起 PR，并按照本项目的格式提供仓库链接、Star 数、简介等相关信息，感谢～
+
+## 收录范围
+
+- **收录**：以一张或多张参考图像/身份为条件，在新文本、场景、姿态、布局或视频运动中保持人物 ID 或通用主体特征的方法。
+- **单独整理**：直接服务于主体一致性生成的测评指标、benchmark 和训练数据集。
+- **暂不收录**：仅做检索/识别、隐私攻击与防护、换装/妆发迁移、图像修复、换脸、纯 3D Avatar 或 Talking Head，且没有通用自定义生成贡献的工作。
+
+## 最近更新
+
+- **2026-07-19（精细检索）**：按人物 ID、通用主体、多主体/布局、图像/视频、训练式/免训练、测评与数据集等方向交叉检索，方法全景表扩展至 **71 项**。
+- 本轮新增 Identity Tuning、DeGu、Sparse Context、SwiftPie、ASTRA、DisCo、MS-CustomNet、IdGlow、FlowFixer、DreamVAR、MOSAIC、ContextGen、LayerComposer、AnyMS，以及 3 项测评和 4 个数据集。
+- 同步更新项目范围、架构分类和论文原始架构图；年份以论文或项目首次公开时间为准。
 
 
 ## 目录
+- [收录范围](#收录范围)
+- [最近更新](#最近更新)
 - [目录](#目录)
   
   - [1. 人物自定义模型](#1-人物自定义模型)
     
     - [1.1 方法全景表](#11-方法全景表)
-    - [1.2 基于DiT架构](#12-flux模型)
-    - [1.3 基于unet架构](#13-unet模型)
+    - [1.2 基于 DiT / Flow Transformer 架构](#dit-models)
+    - [1.3 基于 UNet 架构](#unet-models)
+    - [1.4 自回归与其他架构](#other-models)
   - [2. 测评](#2-测评)
   - [3. 数据集](#3-数据集)
   
@@ -72,6 +87,19 @@ Awesome-ID-Customization
 | **MagicView** | 2025 | DiT | Priors-guided in-context learning | 单图到多视角 ID 一致 | [arXiv](https://arxiv.org/abs/2511.00293) |
 | **Proteus-ID** | 2025 | Video DiT | ID-consistent video customization | 单人 ID，运动一致视频 | [GitHub](https://github.com/grenoble-zhang/Proteus-ID) |
 | **DivRL** | 2026 | Post-training / RL | Identity-diversity reward optimization | 主体一致性 + 多样性 | [GitHub](https://github.com/QianWangX/DivRL) |
+| **Pose-ICL** | 2026 | FLUX / DiT | 3D-aware in-context learning | 主体 ID + 连续视角/姿态控制 | [arXiv](https://arxiv.org/abs/2606.10902) |
+| **CustomShift** | 2026 | SD3 / MM-DiT | Attention distribution shift | 多参考主体一致性 + 文本对齐 | [arXiv](https://arxiv.org/abs/2606.16866) |
+| **RAVA** | 2026 | FLUX.2 / DiT | Retrieval-augmented viewpoint alignment | 跨主体视角对齐 + 多参考选择 | [arXiv](https://arxiv.org/abs/2606.17619) |
+| **Aura** | 2026 | Wan2.2 / Video DiT | VLM-grounded multi-reference conditioning | 多人物/物体/场景一致视频 | [arXiv](https://arxiv.org/abs/2607.04311) |
+| **MOSAIC** | 2025 | FLUX / DiT | Correspondence alignment + feature disentanglement | 多主体语义对应 + 防属性泄漏 | [Project](https://bytedance-fanqie-ai.github.io/MOSAIC/) |
+| **ContextGen** | 2025 | FLUX / DiT | Contextual layout anchoring | 多实例布局 + ID 一致性 | [GitHub](https://github.com/nenhang/ContextGen) |
+| **LayerComposer** | 2025 | FLUX Kontext / DiT | Layered-canvas conditioning | 多人物交互式位置/尺寸控制 | [Project](https://snap-research.github.io/layercomposer/) |
+| **IdGlow** | 2026 | Flow Matching / DiT | Dynamic identity modulation | 可变数量多 ID + 结构变形 | [arXiv](https://arxiv.org/abs/2603.00607) |
+| **DisCo** | 2026 | FLUX / DiT | Identity-text disentangle and re-couple | 主体保真度 + 文本可控性 | [arXiv](https://arxiv.org/abs/2604.00849) |
+| **ASTRA** | 2026 | DiT | Retrieval-augmented pose guidance | 多主体 ID + 复杂姿态 | [arXiv](https://arxiv.org/abs/2604.13938) |
+| **Sparse Context** | 2026 | FLUX.2 / DiT | Reference-token dropping | 多参考条件加速 + 显存节省 | [Project](https://sparsecontext.github.io/) |
+| **DeGu** | 2026 | Backbone-agnostic | Decoupled subject/context guidance | 保真度与可编辑性独立控制 | [arXiv](https://arxiv.org/abs/2607.00766) |
+| **Identity Tuning** | 2026 | FLUX / DiT | Training-free latent identity directions | 细粒度脸部属性编辑 + ID 稳定 | [Project](https://garibida.github.io/IdentityTuning/) |
 | **PortraitBooth** | 2023 | UNet | Fast portrait personalization | 单人肖像定制 | [Project](https://portraitbooth.github.io/) |
 | **DreamIdentity** | 2023 | UNet | Face-identity preserved generation | 单人 ID，编辑性增强 | [arXiv](https://arxiv.org/abs/2307.00300) |
 | **ConsistentID** | 2024 | UNet | Multimodal fine-grained ID preserving | 单人肖像生成 | [GitHub](https://github.com/JackAILab/ConsistentID) |
@@ -93,10 +121,18 @@ Awesome-ID-Customization
 | **FaceSnap** | 2026 | UNet | ID-fidelity network | Tuning-free portrait customization | [arXiv](https://arxiv.org/abs/2602.00627) |
 | **Diff-PC** | 2026 | UNet | 3D-aware controllable diffusion | 零样本肖像定制 | [arXiv](https://arxiv.org/abs/2602.00639) |
 | **UniID** | 2025 | UNet | Training for identity, inference for control | 免调参人脸个性化 | [GitHub](https://github.com/lyuPang/UniID) |
+| **SPaRa-DCAL** | 2026 | SDXL / UNet | Stage-aware LoRA + candidate calibration | 单主体 ID、文本与多样性平衡 | [arXiv](https://arxiv.org/abs/2607.07173) |
+| **AnyMS** | 2025 | SDXL / UNet | Training-free attention decoupling | 多主体布局 + 文本/ID 平衡 | [arXiv](https://arxiv.org/abs/2512.23537) |
+| **FlowFixer** | 2026 | SDXL / UNet | Reference-guided detail refinement | 跨尺度/视角高频细节恢复 | [arXiv](https://arxiv.org/abs/2602.21402) |
+| **MS-CustomNet** | 2026 | LDM / UNet | Hierarchical relational semantics | 多主体层级关系 + 空间布局 | [arXiv](https://arxiv.org/abs/2603.21136) |
+| **SwiftPie** | 2026 | SD 1.5/SDXL / UNet | One-step identity injection | 单步实时主体个性化 | [arXiv](https://arxiv.org/abs/2605.01510) |
+| **DreamVAR** | 2026 | Visual Autoregressive | Subject pre-filling + GRPO | 自回归主体一致生成 | [arXiv](https://arxiv.org/abs/2601.22507) |
 
 > 备注：年份按论文或项目公开时间粗略标注，详细信息以下方条目与原论文/仓库为准。
 
-#### 1.2 Flux模型
+<a id="12-flux模型"></a>
+
+#### 1.2 <a id="dit-models"></a>基于 DiT / Flow Transformer 架构
 
 * **EditID: Training-Free Editable ID Customization for Text-to-Image Generation**
   
@@ -315,8 +351,101 @@ Awesome-ID-Customization
 
   ![image](pic/divrl.png)
 
+* **Pose-ICL: 3D-Aware In-Context Learning for Pose-Controllable Subject Customization**
 
-#### 1.3 Unet模型
+  * 地址：https://arxiv.org/abs/2606.10902
+  * 架构图：
+
+  ![image](pic/pose-icl.png)
+
+* **CustomShift — Redirecting the Flow: Image Customization through Attention Distribution Shift**
+
+  * 地址：https://arxiv.org/abs/2606.16866
+  * 架构图：
+
+  ![image](pic/customshift.png)
+
+* **RAVA: Retrieval-Augmented Viewpoint Alignment for Subject-Driven Image Generation**
+
+  * 地址：https://arxiv.org/abs/2606.17619
+  * 架构图：
+
+  ![image](pic/rava.png)
+
+* **Aura: Consistent Multi-Subject Video Generation via VLM-Grounded Semantic Alignment**
+
+  * 地址：https://arxiv.org/abs/2607.04311
+  * 架构图：
+
+  ![image](pic/aura.png)
+
+* **MOSAIC: Multi-Subject Personalized Generation via Correspondence-Aware Alignment and Disentanglement**
+
+  * 地址：https://bytedance-fanqie-ai.github.io/MOSAIC/
+  * 架构图：
+
+  ![image](pic/mosaic.png)
+
+* **ContextGen: Contextual Layout Anchoring for Identity-Consistent Multi-Instance Generation**
+
+  * 地址：https://github.com/nenhang/ContextGen ![](https://img.shields.io/github/stars/nenhang/ContextGen.svg)
+  * 架构图：
+
+  ![image](pic/contextgen.png)
+
+* **LayerComposer: Multi-Human Personalized Generation via Layered Canvas**
+
+  * 地址：https://snap-research.github.io/layercomposer/
+  * 架构图：
+
+  ![image](pic/layercomposer.png)
+
+* **IdGlow: Dynamic Identity Modulation for Multi-Subject Generation**
+
+  * 地址：https://arxiv.org/abs/2603.00607
+  * 架构图：
+
+  ![image](pic/idglow.png)
+
+* **DisCo — Disentangling to Re-couple: Resolving the Similarity-Controllability Paradox in Subject-Driven Text-to-Image Generation**
+
+  * 地址：https://arxiv.org/abs/2604.00849
+  * 架构图：
+
+  ![image](pic/disco.png)
+
+* **ASTRA: Enhancing Multi-Subject Generation with Retrieval-Augmented Pose Guidance and Disentangled Position Embedding**
+
+  * 地址：https://arxiv.org/abs/2604.13938
+  * 架构图：
+
+  ![image](pic/astra.png)
+
+* **Sparse Context — Keep The Essentials: Efficient Reference Conditioned Generation via Token Dropping**
+
+  * 地址：https://sparsecontext.github.io/
+  * 架构图：
+
+  ![image](pic/sparse-context.png)
+
+* **DeGu — Decoupled Guidance: Disentangling Subject and Context Pathways in Text-to-Image Personalization**
+
+  * 地址：https://arxiv.org/abs/2607.00766
+  * 架构图：
+
+  ![image](pic/degu.png)
+
+* **Latent-Identity Tuning in Text-to-Image Personalization Models**
+
+  * 地址：https://garibida.github.io/IdentityTuning/
+  * 架构图：
+
+  ![image](pic/identity-tuning.png)
+
+
+<a id="13-unet模型"></a>
+
+#### 1.3 <a id="unet-models"></a>基于 UNet 架构
 
 * **PortraitBooth: A Versatile Portrait Model for Fast Identity-preserved Personalization**
   
@@ -465,6 +594,50 @@ Awesome-ID-Customization
 
   ![image](pic/uniid.jpg)
 
+* **SPaRa-DCAL: Stage-Aware Adaptation and Distribution Calibration for Subject-Driven Personalized Text-to-Image Generation**
+
+  * 地址：https://arxiv.org/abs/2607.07173
+  * 架构图：
+
+  ![image](pic/spara-dcal.png)
+
+* **AnyMS: Bottom-up Attention Decoupling for Layout-guided and Training-free Multi-subject Customization**
+
+  * 地址：https://arxiv.org/abs/2512.23537
+  * 架构图：
+
+  ![image](pic/anyms.png)
+
+* **FlowFixer: Towards Detail-Preserving Subject-Driven Generation**
+
+  * 地址：https://arxiv.org/abs/2602.21402
+  * 架构图：
+
+  ![image](pic/flowfixer.png)
+
+* **MS-CustomNet: Controllable Multi-Subject Customization with Hierarchical Relational Semantics**
+
+  * 地址：https://arxiv.org/abs/2603.21136
+  * 架构图：
+
+  ![image](pic/ms-customnet.png)
+
+* **SwiftPie: Lightning-fast Subject-driven Image Personalization via One-step Diffusion**
+
+  * 地址：https://arxiv.org/abs/2605.01510
+  * 架构图：
+
+  ![image](pic/swiftpie.png)
+
+#### 1.4 <a id="other-models"></a>自回归与其他架构
+
+* **DreamVAR: Taming Reinforced Visual Autoregressive Model for High-Fidelity Subject-Driven Image Generation**
+
+  * 地址：https://arxiv.org/abs/2601.22507
+  * 架构图：
+
+  ![image](pic/dreamvar.png)
+
 ###  2. <a name='评测'></a>测评
 
 
@@ -479,6 +652,31 @@ Awesome-ID-Customization
   * 地址：https://arxiv.org/abs/2603.08090
   * 简介：面向 subject-driven T2I 的分难度、分场景层级测评体系，包含 Subject Identity Consistency Score 等评估指标。
 
+* **MultiBind: A Benchmark for Attribute Misbinding in Multi-Subject Generation**
+
+  * 地址：https://arxiv.org/abs/2603.21937
+  * 简介：基于真实多人照片构建的多主体属性错绑测评，分别检查人脸身份、外观、姿态和表情在不同主体之间的混淆。
+
+* **MaSC: A Masked Similarity Metric for Evaluating Concept-Driven Generation**
+
+  * 地址：https://arxiv.org/abs/2605.22469
+  * 简介：利用前景主体掩码区分概念保持与提示词遵循，通过单次 SigLIP2 编码同时评估主体一致性和背景语义对齐。
+
+* **RefVNLI: Towards Scalable Evaluation of Subject-driven Text-to-image Generation**
+
+  * 地址：https://arxiv.org/abs/2504.17502
+  * 简介：以单次推理联合评估文本对齐和主体保持的低成本指标，覆盖动物、物体等多类主体，并针对人类判断一致性进行训练。
+
+* **Beyond the Pixels: VLM-based Evaluation of Identity Preservation in Reference-Guided Synthesis**
+
+  * 地址：https://arxiv.org/abs/2511.08087
+  * 简介：将身份评估分解为类型、风格、属性和具体特征的层级推理，并提供 1,078 组图像—提示词压力测试样本。
+
+* **When Identities Collapse: A Stress-Test Benchmark for Multi-Subject Personalization**
+
+  * 地址：https://arxiv.org/abs/2603.26078
+  * 简介：针对 2–10 个主体及普通、遮挡、交互三档场景评估身份坍塌，弥补全局 CLIP 指标难以诊断局部主体混淆的问题。
+
 ###  3. <a name='数据集'></a>数据集
 
 * **OpenSubject: Leveraging Video-Derived Identity and Diversity Priors for Subject-driven Image Generation and Manipulation**
@@ -490,6 +688,26 @@ Awesome-ID-Customization
 
   * 地址：https://grenoble-zhang.github.io/Proteus-ID/
   * 简介：Proteus-ID 提出的身份一致视频定制训练与测评数据，覆盖身份保持、文本对齐和运动质量评估。
+
+* **PairHuman: A High-Fidelity Photographic Dataset for Customized Dual-Person Generation**
+
+  * 地址：https://arxiv.org/abs/2511.16712
+  * 简介：面向双人肖像定制的 10 万级高质量摄影数据集，包含场景、服饰、人物交互、关键点、位置和属性标注。
+
+* **SemAlign-MS: Multi-Subject Dataset with Semantic Point Correspondences**
+
+  * 地址：https://bytedance-fanqie-ai.github.io/MOSAIC/
+  * 简介：为多主体生成构建的大规模细粒度语义对应数据集，提供参考主体与目标图像之间的密集语义点对齐监督。
+
+* **IMIG-100K: Image-Guided Multi-Instance Generation Dataset**
+
+  * 地址：https://github.com/nenhang/ContextGen
+  * 简介：面向图像引导多实例生成的 10 万级数据集，同时提供多实例身份参考与详细布局标注。
+
+* **MSI: Multi-Subject Customization Dataset with Hierarchical Relational Semantics**
+
+  * 地址：https://arxiv.org/abs/2603.21136
+  * 简介：从 COCO 派生的多主体训练集，组合多视角参考主体、布局图与层级关系语义，用于显式控制主体间结构和空间位置。
 
 ## Star History
 
