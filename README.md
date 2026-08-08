@@ -29,6 +29,8 @@ Awesome-ID-Customization
 
 ## 最近更新
 
+- **2026-08-08（精细检索）**：延续上轮方向交叉检索 2026 年 7 月至 8 月初的新工作，方法全景表扩展至 **86 项**，并新增视频自定义专门分类。
+- 本轮图像方向新增 MultiCompose、CopyCat、Holistic-ID（DBS）、LILAC、Customized-GRPO、Masked-CFM、LCP-Diffusion、StructPred；视频方向新增 Vera、GroupVideo、HOMIE、ID-V2V、DreamVideo-Omni、PolyVivid、IaD，以及 MSP-Bench 测评和 2 个多 ID 视频数据集。
 - **2026-07-19（精细检索）**：按人物 ID、通用主体、多主体/布局、图像/视频、训练式/免训练、测评与数据集等方向交叉检索，方法全景表扩展至 **71 项**。
 - 本轮新增 Identity Tuning、DeGu、Sparse Context、SwiftPie、ASTRA、DisCo、MS-CustomNet、IdGlow、FlowFixer、DreamVAR、MOSAIC、ContextGen、LayerComposer、AnyMS，以及 3 项测评和 4 个数据集。
 - 同步更新项目范围、架构分类和论文原始架构图；年份以论文或项目首次公开时间为准。
@@ -45,6 +47,7 @@ Awesome-ID-Customization
     - [1.2 基于 DiT / Flow Transformer 架构](#dit-models)
     - [1.3 基于 UNet 架构](#unet-models)
     - [1.4 自回归与其他架构](#other-models)
+    - [1.5 视频自定义](#video-models)
   - [2. 测评](#2-测评)
   - [3. 数据集](#3-数据集)
   
@@ -60,7 +63,7 @@ Awesome-ID-Customization
 | **EditIDv2** | 2025 | Flux / DiT | Data-lubricated ID feature integration | 单人 ID，长文本编辑 | [GitHub](https://github.com/typemovie/EditIDv2) |
 | **PuLID** | 2024 | SD / Flux | Contrastive ID alignment | 单人 ID，轻量快速 | [GitHub](https://github.com/ToTheBeginning/PuLID) |
 | **FLUX-customID** | 2024 | Flux | ID adapter / customization | 单人 ID，真实感定制 | [GitHub](https://github.com/damo-cv/FLUX-customID) |
-| **ConsisID** | 2024 | Video DiT | Frequency decomposition for T2V | 单人 ID 视频 | [GitHub](https://github.com/PKU-YuanGroup/ConsisID) |
+| **ConsisID** | 2024 | CogVideoX / Video DiT | Frequency decomposition for IPT2V | 单人 ID 视频 | [GitHub](https://github.com/PKU-YuanGroup/ConsisID) |
 | **InfiniteYou** | 2025 | Flux / DiT | Flexible photo recrafting | 单人 ID，照片重绘 | [GitHub](https://github.com/bytedance/InfiniteYou) |
 | **UNO** | 2025 | DiT | In-context subject generation | 单/多主体，少样本上下文 | [GitHub](https://github.com/bytedance/UNO) |
 | **ACE++** | 2025 | DiT | Instruction image creation/editing | 上下文填充，主体/风格编辑 | [GitHub](https://github.com/ali-vilab/ACE_plus) |
@@ -100,6 +103,12 @@ Awesome-ID-Customization
 | **Sparse Context** | 2026 | FLUX.2 / DiT | Reference-token dropping | 多参考条件加速 + 显存节省 | [Project](https://sparsecontext.github.io/) |
 | **DeGu** | 2026 | Backbone-agnostic | Decoupled subject/context guidance | 保真度与可编辑性独立控制 | [arXiv](https://arxiv.org/abs/2607.00766) |
 | **Identity Tuning** | 2026 | FLUX / DiT | Training-free latent identity directions | 细粒度脸部属性编辑 + ID 稳定 | [Project](https://garibida.github.io/IdentityTuning/) |
+| **CopyCat** | 2026 | FLUX / DiT | One-time LoRA self-reconstruction refinement | 细粒度主体细节，秒级精修 | [arXiv](https://arxiv.org/abs/2608.00674) |
+| **Holistic-ID (DBS)** | 2026 | FLUX / DiT | Dual-branch dynamic balancing scaling | 人脸细节 + 整体外观联合保持 | [arXiv](https://arxiv.org/abs/2607.25622) |
+| **LILAC** | 2026 | Qwen-Image-Edit / DiT | Layer-wise independent LoRAs + cascaded conditioning | 多概念组合，免联合训练 | [GitHub](https://github.com/marianlupascu/LILAC) |
+| **StructPred** | 2026 | FLUX / DiT | Intermediate structural (Canny) prediction | 高频细节/文字 logo 保持 | [arXiv](https://arxiv.org/abs/2605.20807) |
+| **Customized-GRPO** | 2025 | FLUX / DiT + RL | Synergy-aware reward shaping + time-aware weighting | 保真度与提示词遵循协同优化 | [arXiv](https://arxiv.org/abs/2510.18263) |
+| **Masked-CFM** | 2025 | FLUX / DiT | Latent concatenation + masked conditional flow matching | ID 一致性与提示词多样性平衡 | [arXiv](https://arxiv.org/abs/2511.08061) |
 | **PortraitBooth** | 2023 | UNet | Fast portrait personalization | 单人肖像定制 | [Project](https://portraitbooth.github.io/) |
 | **DreamIdentity** | 2023 | UNet | Face-identity preserved generation | 单人 ID，编辑性增强 | [arXiv](https://arxiv.org/abs/2307.00300) |
 | **ConsistentID** | 2024 | UNet | Multimodal fine-grained ID preserving | 单人肖像生成 | [GitHub](https://github.com/JackAILab/ConsistentID) |
@@ -126,7 +135,16 @@ Awesome-ID-Customization
 | **FlowFixer** | 2026 | SDXL / UNet | Reference-guided detail refinement | 跨尺度/视角高频细节恢复 | [arXiv](https://arxiv.org/abs/2602.21402) |
 | **MS-CustomNet** | 2026 | LDM / UNet | Hierarchical relational semantics | 多主体层级关系 + 空间布局 | [arXiv](https://arxiv.org/abs/2603.21136) |
 | **SwiftPie** | 2026 | SD 1.5/SDXL / UNet | One-step identity injection | 单步实时主体个性化 | [arXiv](https://arxiv.org/abs/2605.01510) |
+| **MultiCompose** | 2026 | SDXL / UNet | Per-concept tuning + spatially exclusive composition | 多概念组合 + 逐主体属性绑定 | [GitHub](https://github.com/I2-Multimedia-Lab/MultiCompose) |
+| **LCP-Diffusion** | 2025 | UNet | Dynamic-static visual refining + dual layout control | 多主体布局可控 + 免调参 | [arXiv](https://arxiv.org/abs/2505.20909) |
 | **DreamVAR** | 2026 | Visual Autoregressive | Subject pre-filling + GRPO | 自回归主体一致生成 | [arXiv](https://arxiv.org/abs/2601.22507) |
+| **Vera** | 2026 | Wan2.2 / Video DiT | Identity-aligned data + reference-preserving attention | 单/多人 S2V，防属性互换 | [arXiv](https://arxiv.org/abs/2607.20247) |
+| **GroupVideo** | 2026 | Video DiT | Multimodal identity alignment + ID localization | 多 ID 视频，防 copy-paste | [arXiv](https://arxiv.org/abs/2607.21027) |
+| **HOMIE** | 2026 | Wan2.x / Video DiT | MLLM global guidance + modality-reference embedding | 人-物交互视频个性化 | [Project](https://yiyangcai.github.io/homie-page.github.io/) |
+| **ID-V2V** | 2026 | Wan2.x / Video DiT | Relighting-based identity control | ID + 表演保持的视频重风格化 | [GitHub](https://github.com/Eyeline-Labs/ID-V2V) |
+| **DreamVideo-Omni** | 2026 | Video DiT / RL | Omni-motion control + latent identity reward | 多主体视频 + 全粒度运动控制 | [Project](https://dreamvideo-omni.github.io) |
+| **PolyVivid** | 2025 | HunyuanVideo / MM-DiT | VLLM text-image fusion + 3D-RoPE enhancement | 多主体视频交互一致 | [Project](https://sjtuplayer.github.io/projects/PolyVivid) |
+| **IaD** | 2026 | Video DiT | Identity-action decoupling losses | 单人 ID 视频 + 表情可控 | [arXiv](https://arxiv.org/abs/2606.22347) |
 
 > 备注：年份按论文或项目公开时间粗略标注，详细信息以下方条目与原论文/仓库为准。
 
@@ -442,6 +460,48 @@ Awesome-ID-Customization
 
   ![image](pic/identity-tuning.png)
 
+* **CopyCat: Improving Fine-Grained Subject Consistency in Subject-to-Image Models within Seconds**
+
+  * 地址：https://arxiv.org/abs/2608.00674
+  * 架构图：
+
+  ![image](pic/copycat.png)
+
+* **Beyond Facial Consistency: Personalized Person Image Generation with Holistic Identity Preservation**
+
+  * 地址：https://arxiv.org/abs/2607.25622
+  * 架构图：
+
+  ![image](pic/holisticid.png)
+
+* **LILAC: Layer-Wise Independent LoRAs and Cascaded Conditioning for Multi-Concept Customization of Diffusion Models**
+
+  * 地址：https://github.com/marianlupascu/LILAC ![](https://img.shields.io/github/stars/marianlupascu/LILAC.svg)
+  * 架构图：
+
+  ![image](pic/lilac.png)
+
+* **StructPred — Decomposing Subject-Driven Image Generation via Intermediate Structural Prediction**
+
+  * 地址：https://arxiv.org/abs/2605.20807
+  * 架构图：
+
+  ![image](pic/structpred.png)
+
+* **Customized-GRPO — From Competition to Synergy: Unlocking Reinforcement Learning for Subject-Driven Image Generation**
+
+  * 地址：https://arxiv.org/abs/2510.18263
+  * 方法示意（SARS 奖励整形）：
+
+  ![image](pic/customized-grpo.png)
+
+* **Taming Identity Consistency and Prompt Diversity in Diffusion Models via Latent Concatenation and Masked Conditional Flow Matching**
+
+  * 地址：https://arxiv.org/abs/2511.08061
+  * 架构图：
+
+  ![image](pic/maskedcfm.png)
+
 
 <a id="13-unet模型"></a>
 
@@ -629,6 +689,20 @@ Awesome-ID-Customization
 
   ![image](pic/swiftpie.png)
 
+* **MultiCompose: Multi-Concept Personalized Composition with Per-Subject Attribute Binding**
+
+  * 地址：https://github.com/I2-Multimedia-Lab/MultiCompose ![](https://img.shields.io/github/stars/I2-Multimedia-Lab/MultiCompose.svg)
+  * 架构图：
+
+  ![image](pic/multicompose.png)
+
+* **Create Anything Anywhere: Layout-Controllable Personalized Diffusion Model for Multiple Subjects**
+
+  * 地址：https://arxiv.org/abs/2505.20909
+  * 架构图：
+
+  ![image](pic/lcp-diffusion.png)
+
 #### 1.4 <a id="other-models"></a>自回归与其他架构
 
 * **DreamVAR: Taming Reinforced Visual Autoregressive Model for High-Fidelity Subject-Driven Image Generation**
@@ -637,6 +711,59 @@ Awesome-ID-Customization
   * 架构图：
 
   ![image](pic/dreamvar.png)
+
+#### 1.5 <a id="video-models"></a>视频自定义
+
+> 本小节收录以参考图像/身份为条件的视频自定义方法。较早的 ConsisID、MagicMirror、Proteus-ID、Aura 仍列在 1.2 小节。
+
+* **Vera: Identity-Faithful Human Subject-to-Video Generation**
+
+  * 地址：https://arxiv.org/abs/2607.20247
+  * 架构图：
+
+  ![image](pic/vera.png)
+
+* **GroupVideo: Multi-Identity Customized Text-to-Video Generation**
+
+  * 地址：https://arxiv.org/abs/2607.21027
+  * 架构图：
+
+  ![image](pic/groupvideo.png)
+
+* **HOMIE: Human-object Centric Video Personalization via Multimodal Intelligent Enhancement**
+
+  * 地址：https://yiyangcai.github.io/homie-page.github.io/
+  * 架构图：
+
+  ![image](pic/homie.png)
+
+* **ID-V2V: Identity-Preserving Video Restylization**
+
+  * 地址：https://github.com/Eyeline-Labs/ID-V2V ![](https://img.shields.io/github/stars/Eyeline-Labs/ID-V2V.svg)
+  * 架构图：
+
+  ![image](pic/id-v2v.png)
+
+* **DreamVideo-Omni: Omni-Motion Controlled Multi-Subject Video Customization with Latent Identity Reinforcement Learning**
+
+  * 地址：https://dreamvideo-omni.github.io
+  * 架构图：
+
+  ![image](pic/dreamvideo-omni.png)
+
+* **PolyVivid: Vivid Multi-Subject Video Generation with Cross-Modal Interaction and Enhancement**
+
+  * 地址：https://sjtuplayer.github.io/projects/PolyVivid
+  * 架构图：
+
+  ![image](pic/polyvivid.png)
+
+* **IaD — Customizing Video Portraits via Identity-Action Decoupling**
+
+  * 地址：https://arxiv.org/abs/2606.22347
+  * 架构图：
+
+  ![image](pic/iad.png)
 
 ###  2. <a name='评测'></a>测评
 
@@ -677,6 +804,16 @@ Awesome-ID-Customization
   * 地址：https://arxiv.org/abs/2603.26078
   * 简介：针对 2–10 个主体及普通、遮挡、交互三档场景评估身份坍塌，弥补全局 CLIP 指标难以诊断局部主体混淆的问题。
 
+* **MSP-Bench: Multi-Subject Personalization Benchmark**
+
+  * 地址：https://github.com/I2-Multimedia-Lab/MultiCompose
+  * 简介：MultiCompose 提出的多主体测评，在 T2I-CompBench++ 基础上以双通路协议联合评估身份保真度、属性绑定准确性和属性错绑程度。
+
+* **Finer-Personalization Rank: Fine-Grained Retrieval Examines Identity Preservation for Personalized Generation**
+
+  * 地址：https://arxiv.org/abs/2512.19026
+  * 简介：把身份保持评估转为检索排序问题，以生成图为 query 在视觉相似的真实图库中检索，用 mAP 等指标衡量细粒度身份细节。
+
 ###  3. <a name='数据集'></a>数据集
 
 * **OpenSubject: Leveraging Video-Derived Identity and Diversity Priors for Subject-driven Image Generation and Manipulation**
@@ -708,6 +845,21 @@ Awesome-ID-Customization
 
   * 地址：https://arxiv.org/abs/2603.21136
   * 简介：从 COCO 派生的多主体训练集，组合多视角参考主体、布局图与层级关系语义，用于显式控制主体间结构和空间位置。
+
+* **Vera Identity-Aligned Human Image-Video Dataset**
+
+  * 地址：https://arxiv.org/abs/2607.20247
+  * 简介：通过人物级跨片段检索构建的百万级图像—视频配对数据，提供显式身份对应关系和姿态、视角多样的参考图，用于人物中心 S2V 训练。
+
+* **GroupVideo Multi-Character Video Dataset**
+
+  * 地址：https://arxiv.org/abs/2607.21027
+  * 简介：面向多 ID 视频定制的 2 万条高分辨率多人视频数据，覆盖多角度人像与自然交互动作，缓解多人视频训练数据稀缺问题。
+
+* **TextingSubject (StructPred)**
+
+  * 地址：https://arxiv.org/abs/2605.20807
+  * 简介：全自动流程构建的 10 万级文字感知配对数据，强调跨视角文本一致性，用于提升 logo、图案和文字等高频身份细节的保持能力。
 
 ## Star History
 
