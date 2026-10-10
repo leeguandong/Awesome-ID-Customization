@@ -100,6 +100,9 @@ Awesome-ID-Customization
 | **StructPred** | 2026 | FLUX / DiT | Intermediate structural (Canny) prediction | 高频细节/文字 logo 保持 | [arXiv](https://arxiv.org/abs/2605.20807) |
 | **Customized-GRPO** | 2025 | FLUX / DiT + RL | Synergy-aware reward shaping + time-aware weighting | 保真度与提示词遵循协同优化 | [arXiv](https://arxiv.org/abs/2510.18263) |
 | **Masked-CFM** | 2025 | FLUX / DiT | Latent concatenation + masked conditional flow matching | ID 一致性与提示词多样性平衡 | [arXiv](https://arxiv.org/abs/2511.08061) |
+| **CRAFT** | 2026 | FLUX.2-klein-9B / MM-DiT | Reference-only attention reward fine-tuning | 单/多主体，免合成目标图监督 | [Project](https://jihun999.github.io/projects/CRAFT/) |
+| **RefCompose** | 2026 | FLUX.2-dev / MM-DiT | Fixed reference canvas + dual LoRA streams | 多参考布局与外观分离，固定条件长度 | [arXiv](https://arxiv.org/abs/2609.32389) |
+| **V-Engram** | 2026 | SD3.5 / MM-DiT | Trigger-indexed external memory | 少样本主体记忆 + 多概念按需组合 | [arXiv](https://arxiv.org/abs/2609.37198) |
 | **PortraitBooth** | 2023 | UNet | Fast portrait personalization | 单人肖像定制 | [Project](https://portraitbooth.github.io/) |
 | **DreamIdentity** | 2023 | UNet | Face-identity preserved generation | 单人 ID，编辑性增强 | [arXiv](https://arxiv.org/abs/2307.00300) |
 | **ConsistentID** | 2024 | UNet | Multimodal fine-grained ID preserving | 单人肖像生成 | [GitHub](https://github.com/JackAILab/ConsistentID) |
@@ -128,7 +131,10 @@ Awesome-ID-Customization
 | **SwiftPie** | 2026 | SD 1.5/SDXL / UNet | One-step identity injection | 单步实时主体个性化 | [arXiv](https://arxiv.org/abs/2605.01510) |
 | **MultiCompose** | 2026 | SDXL / UNet | Per-concept tuning + spatially exclusive composition | 多概念组合 + 逐主体属性绑定 | [GitHub](https://github.com/I2-Multimedia-Lab/MultiCompose) |
 | **LCP-Diffusion** | 2025 | UNet | Dynamic-static visual refining + dual layout control | 多主体布局可控 + 免调参 | [arXiv](https://arxiv.org/abs/2505.20909) |
+| **IMA** | 2026 | SD 1.5 + IP-Adapter / UNet | In-loop adaptation + coupled latent-noise guidance | 推理中逐步适配主体，兼顾文本对齐 | [arXiv](https://arxiv.org/abs/2608.09244) |
+| **Dual-FDM** | 2026 | SDXL + IP-Adapter / UNet | Frequency-aware dual-reference disentanglement | 主体与风格双参考组合 | [GitHub](https://github.com/htyjers/Dual-FDM) |
 | **DreamVAR** | 2026 | Visual Autoregressive | Subject pre-filling + GRPO | 自回归主体一致生成 | [arXiv](https://arxiv.org/abs/2601.22507) |
+| **WithEveryone** | 2026 | HunyuanImage 3.5-preview / Unified MoT | Identity tokens + layout reasoning + grounded ID loss | 5–10 人身份、人数与布局绑定 | [GitHub](https://github.com/doby-xu/WithEveryone) |
 | **Vera** | 2026 | Wan2.2 / Video DiT | Identity-aligned data + reference-preserving attention | 单/多人 S2V，防属性互换 | [arXiv](https://arxiv.org/abs/2607.20247) |
 | **GroupVideo** | 2026 | Video DiT | Multimodal identity alignment + ID localization | 多 ID 视频，防 copy-paste | [arXiv](https://arxiv.org/abs/2607.21027) |
 | **HOMIE** | 2026 | Wan2.x / Video DiT | MLLM global guidance + modality-reference embedding | 人-物交互视频个性化 | [Project](https://yiyangcai.github.io/homie-page.github.io/) |
@@ -136,6 +142,12 @@ Awesome-ID-Customization
 | **DreamVideo-Omni** | 2026 | Video DiT / RL | Omni-motion control + latent identity reward | 多主体视频 + 全粒度运动控制 | [Project](https://dreamvideo-omni.github.io) |
 | **PolyVivid** | 2025 | HunyuanVideo / MM-DiT | VLLM text-image fusion + 3D-RoPE enhancement | 多主体视频交互一致 | [Project](https://sjtuplayer.github.io/projects/PolyVivid) |
 | **IaD** | 2026 | Video DiT | Identity-action decoupling losses | 单人 ID 视频 + 表情可控 | [arXiv](https://arxiv.org/abs/2606.22347) |
+| **KeyID** | 2026 | Modular video pipeline | Video drafting + sparse keyframe ID editing | 多参考身份保持 + 连续动作生成 | [GitHub](https://github.com/WISLab-GDUT/KeyID) |
+| **AESR** | 2026 | API-based video pipeline | Agentic prompt enhancement + semantic repair | 黑盒视频模型的 ID 与指令修复 | [GitHub](https://github.com/oceanflowlab/AESR) |
+| **BEACON** | 2026 | Wan 14B / Video DiT | Decoupled appearance and behavior conditioning | 肖像 ID + 人物特有表情动态 | [arXiv](https://arxiv.org/abs/2609.13264) |
+| **DIAL** | 2026 | Video DiT | Intrinsic attention guidance + preference optimization | 逐主体保真度可控，缓解语义漂移 | [arXiv](https://arxiv.org/abs/2609.11507) |
+| **SubjectAnchor** | 2026 | Wan2.2-I2V-A14B / Video DiT | Subject-aware memory retrieval + temporal RoPE | 跨镜头多主体身份与出入镜控制 | [arXiv](https://arxiv.org/abs/2609.34502) |
+| **Expression-Diverse References** | 2026 | Stand-In / Wan2.2-T2V-A14B | Multi-expression reference conditioning | 强表情下 ID 保持 + 表情分层测评 | [arXiv](https://arxiv.org/abs/2610.11023) |
 
 > 备注：年份按论文或项目公开时间粗略标注，详细信息以下方条目与原论文/仓库为准。
 
@@ -286,6 +298,7 @@ Awesome-ID-Customization
 * **WithAnyone: Towards Controllable and ID Consistent Image Generation**
 
   * 地址：https://github.com/Doby-Xu/WithAnyone ![](https://img.shields.io/github/stars/Doby-Xu/WithAnyone.svg)
+  * 后续进展（2026-09）：作者公布面向 5–10 人合照的 [WithEveryone](https://github.com/doby-xu/WithEveryone)，详见 1.4 小节；新项目代码与权重仍待发布。
   * 架构图：
 
   ![image](pic/withanyone.png)
@@ -494,6 +507,35 @@ Awesome-ID-Customization
   ![image](pic/maskedcfm.png)
 
 
+* **CRAFT: Constrained Reward via Attention Fine-Tuning for Subject Personalization without Composed Targets**
+
+  * 地址：https://jihun999.github.io/projects/CRAFT/
+  * 论文（2026-08-14）：https://arxiv.org/abs/2608.14403
+  * 简介：在已有参考图条件能力的 FLUX.2-klein-9B 上，用约 1 万张参考图及主体掩码进行单步奖励微调；注意力对齐与掩码约束的身份奖励共同监督主体绑定，无需合成主体在新场景中的目标图。
+  * 发布状态（2026-10-09 核验）：项目页已公开，代码标注为 Coming Soon。
+  * 架构图（[原论文 Figure 1](https://arxiv.org/html/2608.14403v1#S3.F1)）：
+
+  ![CRAFT 架构图](pic/craft.png)
+
+* **RefCompose: Multi-Reference Image Generation via LoRA-Conditioned Diffusion**
+
+  * 地址：https://arxiv.org/abs/2609.32389
+  * 论文日期：2026-09-26。
+  * 简介：将多主体参考压入固定分辨率画布，由生成模型诱导布局，再以独立 LoRA 流分别注入深度结构和主体外观；在固定输出设置下，条件 token 数不随参考数量增长。
+  * 架构图（[原论文 Figure 2](https://arxiv.org/html/2609.32389v1#S3.F2)）：
+
+  ![RefCompose 架构图](pic/refcompose.png)
+
+* **V-Engram: Trigger-Indexed External Memory for Modular Text-to-Image Personalization**
+
+  * 地址：https://arxiv.org/abs/2609.37198
+  * 论文日期：2026-09-29。
+  * 简介：为少样本主体学习按触发词索引的外部记忆，通过门控残差注入冻结的 SD3.5 文本编码器与 MMDiT；支持按提示词加载记忆及多概念组合，无需合并主体模型权重。
+  * 架构图（[原论文 Figure 2](https://arxiv.org/html/2609.37198v1#S1.F2)）：
+
+  ![V-Engram 架构图](pic/v-engram.png)
+
+
 <a id="13-unet模型"></a>
 
 #### 1.3 <a id="unet-models"></a>基于 UNet 架构
@@ -694,6 +736,25 @@ Awesome-ID-Customization
 
   ![image](pic/lcp-diffusion.png)
 
+* **IMA — In-Loop Model Adaptation with Coupled Latent-Noise Guidance for High-Fidelity Subject-Driven Text-to-Image Generation**
+
+  * 地址：https://arxiv.org/abs/2608.09244
+  * 论文日期：2026-08-10。
+  * 简介：基于 SD 1.5 与 IP-Adapter，在采样过程中逐步更新图像交叉注意力的 Key/Value 参数；用 DDIM 反演潜变量和纯文本预测噪声联合约束主体保真度与文本对齐，每个样本独立适配。
+  * 架构图（[原论文 Figure 2](https://arxiv.org/html/2608.09244v1#S2.F2)）：
+
+  ![IMA 架构图](pic/ima.png)
+
+* **Dual-FDM — Disentangling Dual Image References in Frequency Aware Diffusion Models for Personalized Generation**
+
+  * 地址：https://github.com/htyjers/Dual-FDM ![](https://img.shields.io/github/stars/htyjers/Dual-FDM.svg)
+  * 论文（2026-10-06）：https://arxiv.org/abs/2610.07684
+  * 简介：基于 SDXL / IP-Adapter，以频域掩码分离主体参考和风格参考，利用中频替换实现主体定制与风格迁移的组合；同一框架另支持颜色与风格双参考。
+  * 架构图（[原论文 Figure 3](https://arxiv.org/html/2610.07684v1#S1.F3)）：
+
+  ![Dual-FDM 架构图](pic/dual-fdm.png)
+
+
 #### 1.4 <a id="other-models"></a>自回归与其他架构
 
 * **DreamVAR: Taming Reinforced Visual Autoregressive Model for High-Fidelity Subject-Driven Image Generation**
@@ -702,6 +763,17 @@ Awesome-ID-Customization
   * 架构图：
 
   ![image](pic/dreamvar.png)
+
+* **WithEveryone: Unified Planning and Identity Grounding for Group Image Generation**
+
+  * 地址：https://github.com/doby-xu/WithEveryone ![](https://img.shields.io/github/stars/doby-xu/WithEveryone.svg)
+  * 论文（2026-08-20；v2 2026-09-14）：https://arxiv.org/abs/2608.20336
+  * 简介：基于 HunyuanImage 3.5-preview 的统一理解—生成模型，先为参考身份分配 ID token 并推理人物布局，再以布局约束身份损失监督对应人脸；评测覆盖 5–10 人合照，关注漏人、重复身份和贴脸伪影。
+  * 发布状态（2026-10-09 核验）：论文与项目页已公开；研究版基座许可不允许发布其权重，作者正在训练可开放发布的版本，代码与权重待发布。
+  * 架构图（[原论文 Figure 3](https://arxiv.org/html/2608.20336v2#S3.F3)）：
+
+  ![WithEveryone 架构图](pic/witheveryone.png)
+
 
 #### 1.5 <a id="video-models"></a>视频自定义
 
@@ -756,6 +828,66 @@ Awesome-ID-Customization
 
   ![image](pic/iad.png)
 
+* **KeyID: Decoupled Drafting and Keyframe Editing for Identity-Preserving Video Generation**
+
+  * 地址：https://github.com/WISLab-GDUT/KeyID ![](https://img.shields.io/github/stars/WISLab-GDUT/KeyID.svg)
+  * 论文（2026-08-17）：https://arxiv.org/abs/2608.16154
+  * 简介：先生成符合动作与文本要求的视频草稿，再选择稀疏关键帧注入目标身份并进行运动插值；无需额外训练，支持多参考与复杂连续动作。
+  * 发布状态（2026-10-09 核验）：论文已公开；官方仓库当前仅有占位说明。
+  * 架构图（[原论文 Figure 2](https://arxiv.org/html/2608.16154v1#S3.F2)）：
+
+  ![KeyID 架构图](pic/keyid.png)
+
+* **AESR — Identity-Preserving Text-to-Video Generation via Agentic Enhancement and Semantic Repair**
+
+  * 地址：https://github.com/oceanflowlab/AESR ![](https://img.shields.io/github/stars/oceanflowlab/AESR.svg)
+  * 论文（2026-08-21）：https://arxiv.org/abs/2608.20749
+  * 简介：面向黑盒视频 API，以可复用经验库增强提示词，再通过 VLM 定位错误片段、编辑关键帧并驱动视频修复；官方仓库提供编排代码与 playbook，运行仍需外部模型服务。
+  * 架构图（[原论文 Figure 2](https://arxiv.org/html/2608.20749v1#S2.F2)）：
+
+  ![AESR 架构图](pic/aesr.png)
+
+* **BEACON: Behavior and Appearance Control for Subject-Specific Video Generation**
+
+  * 地址：https://arxiv.org/abs/2609.13264
+  * 论文日期：2026-09-07。
+  * 简介：以参考肖像提供外观身份、参考视频提供人物特有的表情动态，解耦两路条件来控制文本驱动视频；基于 Wan 14B，仅训练约 1% 参数，并支持跨人物身份—表情组合。
+  * 架构图（[原论文 Figure 2](https://arxiv.org/html/2609.13264v1#S3.F2)）：
+
+  ![BEACON 架构图](pic/beacon.png)
+
+* **DIAL — Harnessing Intrinsic Subject-Aware Attention for Controllable Multi-Subject Video Generation**
+
+  * 地址：https://arxiv.org/abs/2609.11507
+  * 论文日期：2026-09-10。
+  * 简介：利用 DiT 内部的主体空间定位注意力：低噪声阶段在推理时分别控制各主体保真度，高噪声阶段构造偏好对并执行 DPO，以缓解主体消失、属性漂移与多参考混淆。
+  * 架构图（[原论文 Figure 3（推理引导）](https://arxiv.org/html/2609.11507v1#S3.F3)）：
+
+  ![DIAL 架构图](pic/dial-guidance.png)
+
+  * 偏好优化（[原论文 Figure 4](https://arxiv.org/html/2609.11507v1#S3.F4)）：
+
+  ![DIAL 偏好优化流程](pic/dial-dpo.png)
+
+* **SubjectAnchor: Subject-Aware Memory-to-Video for Multi-Shot Storytelling**
+
+  * 地址：https://arxiv.org/abs/2609.34502
+  * 论文日期：2026-09-28。
+  * 简介：基于 Wan2.2-I2V-A14B，按当前镜头所需主体检索历史关键帧，并结合主体区分的时间 RoPE 与记忆注意力分区，维持跨镜头身份、场景和人物出入镜约束。
+  * 架构图（[原论文 Figure 4](https://arxiv.org/html/2609.34502v1#S3.F4)）：
+
+  ![SubjectAnchor 架构图](pic/subjectanchor.png)
+
+* **Expression-Diverse References for Identity-Preserving Video Generation**
+
+  * 地址：https://arxiv.org/abs/2610.11023
+  * 论文日期：2026-10-08。
+  * 简介：扩展 Stand-In / Wan2.2，使用同一人物的多表情参考图库改善强表情下的身份保持；单图输入时可合成辅助表情，并用图库匹配及轻度、强烈、极端表情分层统计改进身份评估。
+  * 架构图（[原论文 Figure 7](https://arxiv.org/html/2610.11023v1#S4.F7)）：
+
+  ![Expression-Diverse References for Identity-Preserving Video Generation 架构图](pic/expression-diverse.png)
+
+
 ###  2. <a name='评测'></a>测评
 
 
@@ -805,6 +937,37 @@ Awesome-ID-Customization
   * 地址：https://arxiv.org/abs/2512.19026
   * 简介：把身份保持评估转为检索排序问题，以生成图为 query 在视觉相似的真实图库中检索，用 mAP 等指标衡量细粒度身份细节。
 
+* **Persistent Identity Preservation in Generative Image Models: A Benchmark and Evaluation System**
+
+  * 地址：https://arxiv.org/abs/2609.04151
+  * 论文：2026-09-03。
+  * 简介：比较参考图上下文、主体 LoRA 与持久身份层三种范式，覆盖主体生成、迭代编辑、小尺度人物和多人组合等身份压力场景；收录其评估协议，模型排名以论文中的具体实验设置为准。
+
+* **UFO / UFO-Bench: Chain-of-Evaluation for Omni-Condition Alignment in Multi-Modal Image Generation**
+
+  * 地址：https://arxiv.org/abs/2609.12397
+  * 论文：2026-09-11。
+  * 简介：将图文条件拆为原子评估单元并逐项验证，联合检查主体保持与用户要求的编辑，避免分别计算相似度造成误判；UFO-Bench 含 660 个案例，覆盖四种编辑范式和三档难度。
+
+* **DynSC-Eval — Towards Subject Consistency over Dynamic Subject Sets in Video Generation**
+
+  * 地址：https://arxiv.org/abs/2610.01052
+  * 论文：2026-10-01。
+  * 简介：跟踪视频中动态出现与消失的主体，以六项物体级指标区分局部突变和全局身份漂移；覆盖 5、15、60 秒视频，并探索把一致性指标转为后训练奖励。
+
+* **Visual Jev Rewards: Reference-Bound Verification for Multi-Subject Image Generation**
+
+  * 地址：https://arxiv.org/abs/2610.09328
+  * 论文：2026-10-07。
+  * 简介：以 Qwen3.5-4B 验证“指定参考主体是否满足属性、动作与关系”，将二分类 Yes 概率汇总为 Qwen-Image-Edit-2511 的 GRPO 奖励；结果来自筛选后的 897 个 MICo-Bench 任务及每种奖励单次训练，论文未确立相对直接大模型评分的统计显著优势。
+
+* **FreeMatching — Beyond Spatio-Temporal Priors: A Generalizable Approach for Dense Correspondence Matching**
+
+  * 地址：https://github.com/luping-liu/FreeMatching ![](https://img.shields.io/github/stars/luping-liu/FreeMatching.svg)
+  * 论文（2026-10-08）：https://arxiv.org/abs/2610.12421
+  * 简介：结合生成与语义特征估计图像编辑、参考生成前后的密集对应关系，并用于量化身份保持；本项目收录其与人类判断相关的身份评估用途。
+
+
 ###  3. <a name='数据集'></a>数据集
 
 * **OpenSubject: Leveraging Video-Derived Identity and Diversity Priors for Subject-driven Image Generation and Manipulation**
@@ -851,6 +1014,14 @@ Awesome-ID-Customization
 
   * 地址：https://arxiv.org/abs/2605.20807
   * 简介：全自动流程构建的 10 万级文字感知配对数据，强调跨视角文本一致性，用于提升 logo、图案和文字等高频身份细节的保持能力。
+
+* **RefVideo-6M: A Reliable Reference-Based Dataset for Instructional Video Editing**
+
+  * 地址：https://huggingface.co/datasets/RefVideo6M/RefVideo6M
+  * 论文（2026-08-26）：https://arxiv.org/abs/2608.26101
+  * 公开状态（2026-10-09 核验）：论文声明数据集已公开；本次未能直连 Hugging Face，下载可用性待核验。
+  * 简介：包含 500 万视频编辑样本、100 万图像编辑样本及约 600 万视觉参考，以真实视频作为目标并反向构造编辑输入；其中人物、物体参考条件支持身份保持与主体一致性编辑，论文另提供 Ref-MoT 验证数据有效性。
+
 
 ## Star History
 
