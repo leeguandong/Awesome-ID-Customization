@@ -103,6 +103,7 @@ Awesome-ID-Customization
 | **CRAFT** | 2026 | FLUX.2-klein-9B / MM-DiT | Reference-only attention reward fine-tuning | 单/多主体，免合成目标图监督 | [Project](https://jihun999.github.io/projects/CRAFT/) |
 | **RefCompose** | 2026 | FLUX.2-dev / MM-DiT | Fixed reference canvas + dual LoRA streams | 多参考布局与外观分离，固定条件长度 | [arXiv](https://arxiv.org/abs/2609.32389) |
 | **V-Engram** | 2026 | SD3.5 / MM-DiT | Trigger-indexed external memory | 少样本主体记忆 + 多概念按需组合 | [arXiv](https://arxiv.org/abs/2609.37198) |
+| **MorphSIG** | 2026 | Flux / DiT | Decoupled anchoring + pseudo-flow feature transport | 无训练主体驱动生成，兼顾姿态多样性与主体保真 | [GitHub](https://github.com/LukasYan30/MorphSIG) |
 | **PortraitBooth** | 2023 | UNet | Fast portrait personalization | 单人肖像定制 | [Project](https://portraitbooth.github.io/) |
 | **DreamIdentity** | 2023 | UNet | Face-identity preserved generation | 单人 ID，编辑性增强 | [arXiv](https://arxiv.org/abs/2307.00300) |
 | **ConsistentID** | 2024 | UNet | Multimodal fine-grained ID preserving | 单人肖像生成 | [GitHub](https://github.com/JackAILab/ConsistentID) |
@@ -148,6 +149,9 @@ Awesome-ID-Customization
 | **DIAL** | 2026 | Video DiT | Intrinsic attention guidance + preference optimization | 逐主体保真度可控，缓解语义漂移 | [arXiv](https://arxiv.org/abs/2609.11507) |
 | **SubjectAnchor** | 2026 | Wan2.2-I2V-A14B / Video DiT | Subject-aware memory retrieval + temporal RoPE | 跨镜头多主体身份与出入镜控制 | [arXiv](https://arxiv.org/abs/2609.34502) |
 | **Expression-Diverse References** | 2026 | Stand-In / Wan2.2-T2V-A14B | Multi-expression reference conditioning | 强表情下 ID 保持 + 表情分层测评 | [arXiv](https://arxiv.org/abs/2610.11023) |
+| **Chronos** | 2026 | Video DiT | Sequential temporal anchoring | 多主体身份保持 + 时间控制 | [arXiv](https://arxiv.org/abs/2611.05893) |
+| **One Image Is Enough** | 2026 | Pose-driven Video Diffusion | Test-time self-generated supervision | 单图测试时个性化 + 姿态驱动视频 | [GitHub](https://github.com/SadmanPinon/one-image-is-enough) |
+| **TokenStream** | 2026 | Video DiT | Token-wise LoRA + guided attention | 多主体视频个性化 + 独立适配器组合 | [arXiv](https://arxiv.org/abs/2611.16897) |
 
 > 备注：年份按论文或项目公开时间粗略标注，详细信息以下方条目与原论文/仓库为准。
 
@@ -535,6 +539,15 @@ Awesome-ID-Customization
 
   ![V-Engram 架构图](pic/v-engram.png)
 
+* **MorphSIG: Subject-Driven Image Generation via Decoupled Anchoring and Feature Transport**
+
+  * 地址：https://github.com/LukasYan30/MorphSIG ![](https://img.shields.io/github/stars/LukasYan30/MorphSIG.svg)
+  * 论文（2026-10-29）：https://arxiv.org/abs/2610.39530
+  * 简介：将主体驱动图像生成重构为伪视频特征传输；渐进式解耦锚定在早期去噪中打破结构锁定，再以伪流引导的特征传输精确对齐主体语义，在无训练条件下兼顾姿态多样性和主体保真度。
+  * 架构图（[原论文 Figure 3](https://arxiv.org/html/2610.39530v1#S3.F3)）：
+
+  ![MorphSIG 架构图](pic/morphsig.png)
+
 
 <a id="13-unet模型"></a>
 
@@ -886,6 +899,33 @@ Awesome-ID-Customization
   * 架构图（[原论文 Figure 7](https://arxiv.org/html/2610.11023v1#S4.F7)）：
 
   ![Expression-Diverse References for Identity-Preserving Video Generation 架构图](pic/expression-diverse.png)
+
+* **Chronos: Sequential Identity-Preserving Video Generation by Temporal Anchoring**
+
+  * 地址：https://arxiv.org/abs/2611.05893
+  * 论文日期：2026-11-04。
+  * 简介：先通过语义提示锚定明确文本与参考主体，再生成可控的帧锚点并进行时间锚定，支持多主体视频生成中的身份保持和灵活时间控制。
+  * 架构图（[原论文 Figure 2](https://arxiv.org/html/2611.05893v1#S3.F2)）：
+
+  ![Chronos 架构图](pic/chronos.png)
+
+* **One Image Is Enough: Self-Generated Supervision for Personalizing Human Video Diffusion at Test Time**
+
+  * 地址：https://github.com/SadmanPinon/one-image-is-enough ![](https://img.shields.io/github/stars/SadmanPinon/one-image-is-enough.svg)
+  * 论文（2026-11-02）：https://arxiv.org/abs/2611.02964
+  * 简介：仅用一张参考图和目标姿态序列，在测试时合成伪监督帧并个性化姿态驱动视频扩散模型；不需要主体视频、人工标注或预先收集的多姿态真值。
+  * 架构图（[原论文 Figure 2](https://arxiv.org/html/2611.02964v1#S3.F2)）：
+
+  ![One Image Is Enough 架构图](pic/one-image-is-enough.png)
+
+* **TokenStream: Multi-Subject Personalized Video Generation with Token-wise LoRA and Guided Attention**
+
+  * 地址：https://arxiv.org/abs/2611.16897
+  * 论文日期：2026-11-12。
+  * 简介：每个主体只需一张参考图，分别学习独立主体适配器，并在推理时将 Token-wise LoRA 限定到对应文本 token 的 value 投影；冻结的文本到视频引导流提供 Q/K，使多个主体适配器能够组合生成视频。
+  * 架构图（[原论文 Figure 2](https://arxiv.org/html/2611.16897v1#S3.F2)）：
+
+  ![TokenStream 架构图](pic/tokenstream.png)
 
 
 ###  2. <a name='评测'></a>测评
